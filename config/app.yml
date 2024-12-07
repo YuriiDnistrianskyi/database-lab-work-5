@@ -1,0 +1,16 @@
+COMMON: &common
+  DEBUG: False
+  SQLALCHEMY_TRACK_MODIFICATIONS: False
+
+development:
+  <<: *common
+  DEBUG: True
+  SQLALCHEMY_DATABASE_URI: 'mysql://root:RTXSQl__23!sQl@127.0.0.1:3306/labWork5_2'
+
+production:
+  <<: *common
+  SQLALCHEMY_DATABASE_URI: 'mysql://root:<password>@localhost/lab3'
+
+ADDITIONAL_CONFIG:
+  MYSQL_ROOT_USER: root
+  MYSQL_ROOT_PASSWORD: root
