@@ -8,6 +8,7 @@ class Park(db.Model, IDto):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(50))
+    password = db.Column(db.String(50))
     location = db.Column(db.String(100))
     maxVisit = db.Column(db.Integer)
     attractionNumber = db.Column(db.Integer)

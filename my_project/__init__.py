@@ -13,6 +13,7 @@ from flask import Flask
 from flask_restx import Api, Resource
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy_utils import database_exists, create_database
+from flask_jwt_extended import JWTManager
 
 from my_project.auth.route import register_routes
 
@@ -38,6 +39,8 @@ def create_app(app_config: Dict[str, Any], additional_config: Dict[str, Any]) ->
     app = Flask(__name__)
     app.config["SECRET_KEY"] = secrets.token_hex(16)
     app.config = {**app.config, **app_config}
+
+    jwt = JWTManager(app)
 
     _init_db(app)
     register_routes(app)

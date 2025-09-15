@@ -35,6 +35,7 @@ def register_routes(app: Flask) -> None:
     from .procedures.procedure_park_employee_route import procedure_park_employee_bp
     from .procedures.create_random_tables_route import create_random_tables_bp
 
+    from my_project.auth.auth.routes import auth_bp
 
     app.register_blueprint(park_bp)
     app.register_blueprint(attraction_bp)
@@ -59,4 +60,4 @@ def register_routes(app: Flask) -> None:
     app.register_blueprint(procedure_park_employee_bp)
     app.register_blueprint(create_random_tables_bp)
 
-
+    app.register_blueprint(auth_bp)
